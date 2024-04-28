@@ -22,6 +22,7 @@ export default  async function RecentTransactions({trnx}: {
 }[]}){
   const session = await getServerSession(authOptions)
   const userid=Number(session?.user?.id)
+  console.log("userid ",userid)
 
   return (
     <div className="w-[40vw]  rounded-xl border-2 mt-9 h-[60vh] overflow-scroll">
@@ -41,7 +42,7 @@ export default  async function RecentTransactions({trnx}: {
 
     </div>
     <div className="flex flex-col items-end">
-      <div className={`pb-1 text-slate-950 font-bold ${userid===t.fromUser.id?'text-orange-600':'text-green-600'}`}> {userid===t.fromUser.id?'-':'+'} {t.amount/100} Rs/-</div>
+      <div className={`pb-1 font-bold  ${userid===t.fromUser.id?'text-orange-600':'text-green-600'}`}> {userid===t.fromUser.id?'-':'+'} {t.amount/100} Rs/-</div>
       <div className="text-xs text-slate-500">{t.timestamp.toLocaleString()}</div>
 
     </div>

@@ -53,12 +53,12 @@ export default function SendCard() {
             <TextInput
               placeholder={"Number"}
               label="Number"
-              onChange={(value) => setNumber(value)}
+              onChange={(value:any) => setNumber(value)}
             />
             <TextInput
               placeholder={"Amount"}
               label="Amount"
-              onChange={(value) => setAmount(value)}
+              onChange={(value:any) => setAmount(value)}
             />
             <div className="pt-4 flex justify-center">
               <Button onClick={handler} >Send</Button>

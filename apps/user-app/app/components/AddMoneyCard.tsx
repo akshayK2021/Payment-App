@@ -25,13 +25,13 @@ export const AddMoney=()=>{
   return (
     <Card title="Add Money">
       <div className="w-full">
-        <TextInput label={"Amount"} placeholder={"Amount"} onChange={(val)=>{
+        <TextInput label={"Amount"} placeholder={"Amount"} onChange={(val:any)=>{
             setValue(Number(val))
         }}/>
         <div className="py-4 text-left">
           Bank
         </div>
-        <Select onSelect={(value)=>{
+        <Select onSelect={(value:any)=>{
           setRedirectedUrl(SUPPORTED_BANKS.find(x=>x.name===value)?.redirectedUrl || "")
           setProvider(SUPPORTED_BANKS.find(x => x.name === value)?.name || "");
         }} options={SUPPORTED_BANKS.map(x=>({

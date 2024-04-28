@@ -1,6 +1,6 @@
 export const TextInput = ({ placeholder,onChange,label }: 
   { placeholder:string,
-    onChange:(value:string)=>void,
+    onChange:any,
     label:string
    }) => {
   return (

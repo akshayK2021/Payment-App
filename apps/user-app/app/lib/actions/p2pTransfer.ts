@@ -7,7 +7,7 @@ import prisma from "@repo/db/client"
 
 
 export async function p2pTransfer(to:string,amount:number){
-  await new Promise(r=>setTimeout(r,4000))
+  await new Promise(r=>setTimeout(r,2000))
 
   
   const session = await getServerSession(authOptions);
@@ -56,9 +56,10 @@ export async function p2pTransfer(to:string,amount:number){
         data:{amount:{decrement:amount}}
       });
 
-      await tx.balance.update({
+      await tx.balance.upsert({
         where:{userId:toUser.id},
-        data:{amount:{increment:amount}}
+        update:{amount:{increment:amount}},
+        create:{locked:0,amount:amount,userId:toUser.id}
       })
        
       await tx.p2pTransfer.create({
