@@ -11,7 +11,7 @@
       "dependsOn": ["^lint"]
     },
     "dev": {
-      "env": ["GOOGLE_CLIENT_ID","GOOGLE_CLIENT_SECRET","NEXTAUTH_URL","NEXTAUTH_SECRET","JWT_SECRET"],
+      "env": ["NEXTAUTH_URL","NEXTAUTH_SECRET","JWT_SECRET"],
       "cache": false,
       "persistent": true
     }
