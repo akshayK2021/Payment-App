@@ -28,3 +28,17 @@ jobs:
 
     - name: Verify Pushed Image
       run: docker pull akshayk21/eazypay_repo_v1:latest  # Replace with your Docker Hub username and repository
+
+
+
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          sudo docker pull akshayk21/eazypay_repo_v1:latest
+          sudo docker stop paymentapp || true
+          sudo docker rm paymentapp || true
+          sudo docker run -d --name paymentapp -p 3005:3001 -p 3003:3003 akshayk21/eazypay_repo_v1:latest
