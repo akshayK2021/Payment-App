@@ -3,6 +3,11 @@ import prisma from '@repo/db/client'
 
 const app=express();
 app.use(express.json())
+app.use("/",(req,res)=>{
+  res.json({
+    msg:"server is running"
+  })
+})
 
 app.post("/hdfcWebhook",async(req,res)=>{
 
