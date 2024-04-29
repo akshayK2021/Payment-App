@@ -41,4 +41,4 @@ jobs:
           sudo docker pull akshayk21/eazypay_repo_v1:latest
           sudo docker stop paymentapp || true
           sudo docker rm paymentapp || true
-          sudo docker run -d --name paymentapp -p 3005:3001 -p 3003:3003 akshayk21/eazypay_repo_v1:latest
+          sudo docker run -d --name paymentapp -p 80:3001 -p 3003:3003 akshayk21/eazypay_repo_v1:latest
