@@ -30,7 +30,6 @@ jobs:
       run: docker pull akshayk21/eazypay_repo_v1:latest  # Replace with your Docker Hub username and repository
 
 
-
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
       with:
