@@ -40,4 +40,6 @@ jobs:
           sudo docker pull akshayk21/eazypay_repo_v1:latest
           sudo docker stop paymentapp || true
           sudo docker rm paymentapp || true
-          sudo docker run -d --name paymentapp -p 3001:3001 -p 3003:3003 \ -e JWT_SECRET=test -e NEXTAUTH_URL=ec2-65-2-179-254.ap-south-1.compute.amazonaws.com \ akshayk21/eazypay_repo_v1:latest
+          sudo docker run -d --name paymentapp -p 3001:3001 -p 3003:3003 \
+          -e JWT_SECRET=test -e NEXTAUTH_URL=ec2-65-2-179-254.ap-south-1.compute.amazonaws.com \
+          akshayk21/eazypay_repo_v1:latest
