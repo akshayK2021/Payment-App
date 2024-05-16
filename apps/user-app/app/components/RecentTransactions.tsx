@@ -29,7 +29,7 @@ export default  async function RecentTransactions({trnx}: {
 <Card title="Recent Transactions">
   <div>
   {
-    trnx.map((t)=>(
+    trnx.map((t:any)=>(
       <div className="flex flex-row justify-between items-start border-b pt-3 ">
     <div className="flex flex-col items-start ">
       <div className="text-black  font-bold">
