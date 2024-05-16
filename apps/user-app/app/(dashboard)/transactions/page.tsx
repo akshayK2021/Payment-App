@@ -21,7 +21,7 @@ const alltransactions=async()=>{
     }
 
   })
-  transactions.sort((a, b) => {
+  transactions.sort((a:any, b:any) => {
     if (a.timestamp > b.timestamp) return -1;
     if (a.timestamp < b.timestamp) return 1;
     return 0;
